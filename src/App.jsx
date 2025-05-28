@@ -478,7 +478,6 @@ export default function App() {
             {gameStarted && (
               <div className="grid grid-cols-5 md:grid-cols-3 gap-2 mt-4">
                 <button
-                  onTouchStart={() => movePiece(-1, 0)}
                   onClick={() => movePiece(-1, 0)}
                   className="bg-blue-600 select-none hover:bg-blue-700 text-white font-bold py-3 rounded text-xl"
                 >
@@ -491,16 +490,12 @@ export default function App() {
                   ↻
                 </button>
                 <button
-                  onTouchStart={() => movePiece(1, 0)}
                   onClick={() => movePiece(1, 0)}
                   className="bg-blue-600 select-none hover:bg-blue-700 text-white font-bold py-3 rounded text-xl"
                 >
                   →
                 </button>
                 <button
-                  onTouchStart={() => {
-                    if (movePiece(0, 1)) setScore((prev) => prev + 1);
-                  }}
                   onClick={() => {
                     if (movePiece(0, 1)) setScore((prev) => prev + 1);
                   }}
@@ -509,7 +504,6 @@ export default function App() {
                   ↓
                 </button>
                 <button
-                  onTouchStart={hardDrop}
                   onClick={hardDrop}
                   className="bg-red-600 select-none hover:bg-red-700 text-white font-bold py-3 rounded text-sm"
                 >
